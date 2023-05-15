@@ -1,43 +1,45 @@
-let now = new Date();
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[now.getMonth()];
+  let date = now.getDate();
+  let year = now.getFullYear();
+  let time = document.querySelector("#time");
+  let dateDetails = document.querySelector("#date");
+  time.innerHTML = `${hours}:${minutes}`;
+  return `${day}, ${month} ${date}, ${year}`;
 }
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let month = months[now.getMonth()];
-let date = now.getDate();
-let year = now.getFullYear();
-let time = document.querySelector(".time");
-let h2 = document.querySelector("h2");
-h2.innerHTML = `${day}, ${month} ${date}, ${year}`;
-time.innerHTML = `${hours}:${minutes}`;
 
 function searchCity(city) {
   let apiKey = "a6a0t4aeacaf35ff4037b1805fbo4cd1";
@@ -61,6 +63,9 @@ function weatherCondition(response) {
     response.data.temperature.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
+  );
+  document.querySelector("#date").innerHTML = formatDate(
+    response.data.time * 1000
   );
 }
 
