@@ -16,24 +16,27 @@ h1 {
 }
 
 .city-time {
-  margin-top: 165px;
+  position: relative;
+  bottom: 70px;
   text-align: center;
   font-size: 30px;
 }
 .city {
   text-transform: capitalize;
-  margin-top: 30px;
+  margin-top: 20px;
   text-align: center;
   font-size: 30px;
 }
 
 .time {
-  margin-top: 30px;
+  margin-top: 20px;
   text-align: center;
   font-size: 30px;
 }
 
 h2 {
+  position: relative;
+  bottom: 70px;
   margin-top: 10px;
   text-align: center;
   font-size: 15px;
@@ -57,16 +60,61 @@ h2 {
   font-size: 15px;
 }
 
+.humidity-row {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.wind-row {
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  bottom: 35px;
+}
+
+.pressure-row {
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  bottom: 70px;
+  margin-bottom: 0;
+}
 .humidity {
   font-family: "Rubik", sans-serif;
-  text-align: center;
+  text-align: left;
   font-size: 15px;
+}
+
+.humidity-number {
+  text-align: right;
+}
+hr {
+  position: relative;
+  bottom: 20px;
+  width: 80%;
+  margin: 0 auto;
 }
 .wind {
   font-family: "Rubik", sans-serif;
-  text-align: center;
+  text-align: left;
+  font-size: 15px;
+}
+.wind-number {
+  text-align: right;
+}
+.hr-2 {
+  position: relative;
+  bottom: 55px;
+  width: 80%;
+  margin: 0 auto;
+}
+.pressure {
+  font-family: "Rubik", sans-serif;
+  text-align: left;
   font-size: 15px;
   margin-bottom: 0px;
+}
+.pressure-number {
+  text-align: right;
 }
 
 .container-left {

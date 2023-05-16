@@ -111,9 +111,24 @@
           <a href="#" class="fahrenheit" id="fahrenheit">°F</a>
         </span>
       </h1>
+
       <div class="description" id="description">Few Clouds</div>
-      <div class="humidity">Humidity: <span id="humidity"></span>%</div>
-      <div class="wind">Wind: <span id="wind"></span> km/h</div>
+
+      <div class="row humidity-row">
+        <div class="humidity col">Humidity</div>
+        <div class="humidity-number col"><span id="humidity"></span>%</div>
+      </div>
+      <hr />
+      <div class="row wind-row">
+        <div class="wind col">Wind</div>
+        <div class="wind-number col"><span id="wind"></span> km/h</div>
+      </div>
+      <hr class="hr-2" />
+      <div class="row pressure-row">
+        <div class="pressure col">Pressure</div>
+        <div class="pressure-number col"><span id="pressure"></span> mb</div>
+      </div>
+
       <div class="city-time">
         <span class="city" id="city"></span>
         <span class="time" id="time"></span>

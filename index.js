@@ -107,6 +107,8 @@ function weatherCondition(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#pressure").innerHTML =
+    response.data.temperature.pressure;
   document.querySelector("#date").innerHTML = formatDate(
     response.data.time * 1000
   );
