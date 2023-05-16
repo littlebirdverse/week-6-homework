@@ -133,10 +133,21 @@ h2 {
 .celsius {
   position: relative;
   bottom: 26px;
+  color: #000000;
+  cursor: default;
 }
+
 .celsius:hover {
-  cursor: pointer;
+  color: #17a2b8;
+  text-decoration: none;
 }
+
+.active:hover {
+  color: #000000;
+  cursor: default;
+  text-decoration: none;
+}
+
 .seperation-line {
   position: relative;
   bottom: 26px;
@@ -146,10 +157,13 @@ h2 {
 .fahrenheit {
   position: relative;
   bottom: 26px;
+  color: #000000;
+  cursor: default;
 }
 
 .fahrenheit:hover {
-  cursor: pointer;
+  color: #17a2b8;
+  text-decoration: none;
 }
 
 .day-hours-row {
