@@ -39,6 +39,16 @@ h2 {
   font-size: 15px;
 }
 
+.icon {
+  display: block;
+  max-width: 65px;
+  float: left;
+  margin-left: 0;
+  position: relative;
+  top: 34px;
+  left: 40px;
+}
+
 .description {
   text-transform: capitalize;
   margin-top: 10px;
@@ -88,6 +98,11 @@ h2 {
   margin-right: 0px;
 }
 
+.form-control {
+  background-color: #f9f7fe;
+  border: #f9f7fe;
+}
+
 .search-button {
   margin-top: 20px;
   padding-left: 3.15rem;
@@ -135,12 +150,6 @@ h2 {
 
 .fahrenheit:hover {
   cursor: pointer;
-}
-
-.moon-icon {
-  position: relative;
-  font-size: 50px;
-  color: #6adef8;
 }
 
 .day-hours-row {

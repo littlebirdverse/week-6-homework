@@ -1,3 +1,45 @@
+let defaultNow = new Date();
+let defaultHours = defaultNow.getHours();
+if (defaultHours < 10) {
+  defaultHours = `0${defaultHours}`;
+}
+let defaultMinutes = defaultNow.getMinutes();
+if (defaultMinutes < 10) {
+  defaultMinutes = `0${defaultMinutes}`;
+}
+let defaultDays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let defaultDay = defaultDays[defaultNow.getDay()];
+let defaultMonths = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+let defaultMonth = defaultMonths[defaultNow.getMonth()];
+let defaultDate = defaultNow.getDate();
+let defaultYear = defaultNow.getFullYear();
+let defaultTime = document.querySelector("#time");
+let defaultDateDetails = document.querySelector("#date");
+
+time.innerHTML = `${defaultHours}:${defaultMinutes}`;
+defaultDateDetails.innerHTML = `${defaultDay}, ${defaultMonth} ${defaultDate}, ${defaultYear}`;
+
 function formatDate(timestamp) {
   let now = new Date(timestamp);
   let hours = now.getHours();
@@ -37,6 +79,7 @@ function formatDate(timestamp) {
   let year = now.getFullYear();
   let time = document.querySelector("#time");
   let dateDetails = document.querySelector("#date");
+
   time.innerHTML = `${hours}:${minutes}`;
   return `${day}, ${month} ${date}, ${year}`;
 }
@@ -67,6 +110,12 @@ function weatherCondition(response) {
   document.querySelector("#date").innerHTML = formatDate(
     response.data.time * 1000
   );
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+    );
 }
 
 function searchLocation(position) {
