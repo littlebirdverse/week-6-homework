@@ -122,6 +122,29 @@ function weatherCondition(response) {
   celsiusTemperature = response.data.temperature.current;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+
+  let forecastHTML = `<div class="row weekdays-row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="week col">
+         ${day}<br />
+         <i class="fa-solid fa-snowflake snow-icon"></i>
+          <div class="weather-forecast-temperatures">
+           <span class="weather-forecast-temperature-max"> 16° </span>  
+           <span class="weather-forecast-temperature-min"> 12° </span>
+          </div>
+        </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function searchLocation(position) {
   let apiKey = "6a0t4aeacaf35ff4037b1805fbo4cd1";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${position.coordinates.longitude}&lat=${position.coordinates.latitude}&key=${apiKey}&units=metric`;
@@ -168,3 +191,4 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Lisbon");
+displayForecast();
