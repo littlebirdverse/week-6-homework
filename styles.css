@@ -1,5 +1,10 @@
 body {
-  background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
+  background: linear-gradient(
+    to right,
+    rgb(182, 244, 146),
+    rgb(182, 244, 146),
+    #6fb7bc
+  );
 }
 
 h1,
@@ -89,6 +94,10 @@ h2 {
   bottom: 60px;
   width: 80%;
   margin: 0 auto;
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #fff, #ccc);
 }
 .wind-row {
   font-family: "Rubik", sans-serif;
@@ -109,6 +118,10 @@ h2 {
   bottom: 100px;
   width: 80%;
   margin: 0 auto;
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #fff, #ccc);
 }
 
 .pressure-row {
@@ -132,6 +145,10 @@ h2 {
   bottom: 140px;
   width: 80%;
   margin: 0 auto;
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #fff, #ccc);
 }
 
 .feels-like-row {
