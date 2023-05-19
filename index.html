@@ -51,19 +51,11 @@
         </div>
       </form>
 
-      <div class="row day-hours-row">
-        <div class="hour col">18:00</div>
-        <div class="hour col">21:00</div>
-        <div class="hour col">0:00</div>
-        <div class="hour col">3:00</div>
-        <div class="hour col">6:00</div>
-        <div class="hour col">9:00</div>
-        <div class="hour col">12:00</div>
+      <div class="city-time">
+        <span class="city" id="city"></span>
+        <span class="time" id="time"></span>
       </div>
-      <img
-        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/064/141/original/temp.png?1674489888"
-        alt=""
-      />
+      <h2 id="date"></h2>
 
       <div class="weather-forecast" id="forecast"></div>
     </div>
@@ -94,12 +86,13 @@
         <div class="pressure col">Pressure</div>
         <div class="pressure-number col"><span id="pressure"></span> mb</div>
       </div>
-
-      <div class="city-time">
-        <span class="city" id="city"></span>
-        <span class="time" id="time"></span>
+      <hr class="hr-3" />
+      <div class="row feels-like-row">
+        <div class="feels-like col">Feels Like</div>
+        <div class="feels-like-number col">
+          <span id="feels-like"></span>
+        </div>
       </div>
-      <h2 id="date"></h2>
     </div>
     <p>
       <a

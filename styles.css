@@ -18,14 +18,16 @@ h1 {
 .city-time {
   position: relative;
   bottom: 70px;
-  text-align: center;
+  text-align: left;
   font-size: 30px;
 }
 .city {
   text-transform: capitalize;
   margin-top: 20px;
-  text-align: center;
-  font-size: 30px;
+  text-align: left;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 48px;
 }
 
 .time {
@@ -64,20 +66,6 @@ h2 {
   margin-left: 20px;
   margin-right: 20px;
 }
-.wind-row {
-  margin-left: 20px;
-  margin-right: 20px;
-  position: relative;
-  bottom: 35px;
-}
-
-.pressure-row {
-  margin-left: 20px;
-  margin-right: 20px;
-  position: relative;
-  bottom: 70px;
-  margin-bottom: 0;
-}
 .humidity {
   font-family: "Rubik", sans-serif;
   text-align: left;
@@ -93,6 +81,12 @@ hr {
   width: 80%;
   margin: 0 auto;
 }
+.wind-row {
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  bottom: 40px;
+}
 .wind {
   font-family: "Rubik", sans-serif;
   text-align: left;
@@ -103,9 +97,17 @@ hr {
 }
 .hr-2 {
   position: relative;
-  bottom: 55px;
+  bottom: 60px;
   width: 80%;
   margin: 0 auto;
+}
+
+.pressure-row {
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  bottom: 80px;
+  margin-bottom: 0;
 }
 .pressure {
   font-family: "Rubik", sans-serif;
@@ -116,8 +118,33 @@ hr {
 .pressure-number {
   text-align: right;
 }
+.hr-3 {
+  position: relative;
+  bottom: 100px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.feels-like-row {
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  bottom: 120px;
+  margin-bottom: 0;
+}
+
+.feels-like {
+  font-family: "Rubik", sans-serif;
+  text-align: left;
+  font-size: 15px;
+  margin-bottom: 0px;
+}
+.feels-like-number {
+  text-align: right;
+}
 
 .container-left {
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   max-width: 768px;
   width: 768px;
   height: 450px;
@@ -130,6 +157,7 @@ hr {
 }
 
 .container-right {
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   width: 268px;
   height: 450px;
   margin-top: 30px;
@@ -214,23 +242,18 @@ hr {
   text-decoration: none;
 }
 
-.day-hours-row {
-  margin-left: 10px;
-  margin-right: 10px;
-  text-align: center;
-}
-
 .weather-forecast {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .week {
   margin-bottom: 50px;
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 16px;
 }
+
 .weather-forecast-temperatures {
   font-family: "Rubik", sans-serif;
   font-size: 15px;
@@ -247,16 +270,27 @@ hr {
   margin-right: 5px;
 }
 
-.snow-icon {
-  font-size: 40px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: #d3d3d3;
+.weather-forecast-humidity {
+  margin-top: 5px;
+}
+
+.fa-droplet {
+  color: #84cef8;
+  margin-right: 6px;
+
+  font-size: smaller;
+}
+
+.forecast-icon {
+  max-width: 65px;
 }
 
 img {
+  margin-top: 5px;
+  margin-bottom: 5px;
   display: block;
   margin: 0 auto;
+  max-width: 65px;
 }
 
 p {

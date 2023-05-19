@@ -84,6 +84,53 @@ function formatDate(timestamp) {
   return `${day}, ${month} ${date}, ${year}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+       <div class="week col">
+        ${formatDay(forecastDay.time)}<br />
+
+         <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+           forecastDay.condition.icon
+         }.png" class="forecast-icon" />
+
+          <div class="weather-forecast-temperatures">
+           <span class="weather-forecast-temperature-max"> ${Math.round(
+             forecastDay.temperature.maximum
+           )}° </span>  
+           <span class="weather-forecast-temperature-min"> ${Math.round(
+             forecastDay.temperature.minimum
+           )}° </span>
+
+           <div class="weather-forecast-humidity"> <i class="fa-solid fa-droplet"></i> ${Math.round(
+             forecastDay.temperature.humidity
+           )}% </div>
+          </div>
+  </div>`;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coord) {
+  let apiKey = "a6a0t4aeacaf35ff4037b1805fbo4cd1";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coord.longitude}&lat=${coord.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function searchCity(city) {
   let apiKey = "a6a0t4aeacaf35ff4037b1805fbo4cd1";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
@@ -95,6 +142,7 @@ function submitCity(event) {
   let city = document.querySelector("#formGroupExampleInput").value;
   searchCity(city);
 }
+
 function weatherCondition(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.temperature.current
@@ -109,6 +157,9 @@ function weatherCondition(response) {
   );
   document.querySelector("#pressure").innerHTML =
     response.data.temperature.pressure;
+  document.querySelector("#feels-like").innerHTML = Math.round(
+    response.data.temperature.feels_like
+  );
   document.querySelector("#date").innerHTML = formatDate(
     response.data.time * 1000
   );
@@ -120,29 +171,8 @@ function weatherCondition(response) {
     );
 
   celsiusTemperature = response.data.temperature.current;
-}
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-
-  let days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
-
-  let forecastHTML = `<div class="row weekdays-row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="week col">
-         ${day}<br />
-         <i class="fa-solid fa-snowflake snow-icon"></i>
-          <div class="weather-forecast-temperatures">
-           <span class="weather-forecast-temperature-max"> 16° </span>  
-           <span class="weather-forecast-temperature-min"> 12° </span>
-          </div>
-        </div>`;
-  });
-
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
+  getForecast(response.data.coordinates);
 }
 
 function searchLocation(position) {
@@ -190,5 +220,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-searchCity("Lisbon");
-displayForecast();
+searchCity("London");
