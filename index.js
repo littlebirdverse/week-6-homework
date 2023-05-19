@@ -114,7 +114,7 @@ function displayForecast(response) {
              forecastDay.temperature.minimum
            )}° </span>
 
-           <div class="weather-forecast-humidity"> <i class="fa-solid fa-droplet"></i> ${Math.round(
+           <div class="weather-forecast-humidity"> <i class="fa-solid fa-droplet fa-fade"></i> ${Math.round(
              forecastDay.temperature.humidity
            )}% </div>
           </div>

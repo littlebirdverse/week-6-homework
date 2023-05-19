@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SheCodes</title>
+    <title>Weather App</title>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script
       src="https://kit.fontawesome.com/52ef42237d.js"
@@ -70,27 +70,29 @@
         </span>
       </h1>
 
-      <div class="description" id="description">Few Clouds</div>
+      <div class="description" id="description"></div>
 
-      <div class="row humidity-row">
-        <div class="humidity col">Humidity</div>
-        <div class="humidity-number col"><span id="humidity"></span>%</div>
-      </div>
-      <hr />
-      <div class="row wind-row">
-        <div class="wind col">Wind</div>
-        <div class="wind-number col"><span id="wind"></span> km/h</div>
-      </div>
-      <hr class="hr-2" />
-      <div class="row pressure-row">
-        <div class="pressure col">Pressure</div>
-        <div class="pressure-number col"><span id="pressure"></span> mb</div>
-      </div>
-      <hr class="hr-3" />
-      <div class="row feels-like-row">
-        <div class="feels-like col">Feels Like</div>
-        <div class="feels-like-number col">
-          <span id="feels-like"></span>
+      <div class="main-condition">
+        <div class="row humidity-row">
+          <div class="humidity col">Humidity</div>
+          <div class="humidity-number col"><span id="humidity"></span>%</div>
+        </div>
+        <hr class="hr-1" />
+        <div class="row wind-row">
+          <div class="wind col">Wind</div>
+          <div class="wind-number col"><span id="wind"></span> km/h</div>
+        </div>
+        <hr class="hr-2" />
+        <div class="row pressure-row">
+          <div class="pressure col">Pressure</div>
+          <div class="pressure-number col"><span id="pressure"></span> mb</div>
+        </div>
+        <hr class="hr-3" />
+        <div class="row feels-like-row">
+          <div class="feels-like col">Feels Like</div>
+          <div class="feels-like-number col">
+            <span id="feels-like"></span>
+          </div>
         </div>
       </div>
     </div>

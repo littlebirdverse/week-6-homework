@@ -17,7 +17,8 @@ h1 {
 
 .city-time {
   position: relative;
-  bottom: 70px;
+  bottom: 15px;
+  margin-left: 40px;
   text-align: left;
   font-size: 30px;
 }
@@ -32,15 +33,16 @@ h1 {
 
 .time {
   margin-top: 20px;
-  text-align: center;
+  text-align: left;
   font-size: 30px;
 }
 
 h2 {
   position: relative;
-  bottom: 70px;
+  bottom: 15px;
+  margin-left: 40px;
   margin-top: 10px;
-  text-align: center;
+  text-align: left;
   font-size: 15px;
 }
 
@@ -57,17 +59,24 @@ h2 {
 .description {
   text-transform: capitalize;
   margin-top: 10px;
+  font-weight: 700;
   font-family: "Rubik", sans-serif;
   text-align: center;
   font-size: 15px;
 }
 
+.main-condition {
+  margin-top: 130px;
+}
 .humidity-row {
+  position: relative;
+  bottom: 40px;
+  font-family: "Rubik", sans-serif;
   margin-left: 20px;
   margin-right: 20px;
 }
+
 .humidity {
-  font-family: "Rubik", sans-serif;
   text-align: left;
   font-size: 15px;
 }
@@ -75,20 +84,20 @@ h2 {
 .humidity-number {
   text-align: right;
 }
-hr {
+.hr-1 {
   position: relative;
-  bottom: 20px;
+  bottom: 60px;
   width: 80%;
   margin: 0 auto;
 }
 .wind-row {
+  font-family: "Rubik", sans-serif;
   margin-left: 20px;
   margin-right: 20px;
   position: relative;
-  bottom: 40px;
+  bottom: 80px;
 }
 .wind {
-  font-family: "Rubik", sans-serif;
   text-align: left;
   font-size: 15px;
 }
@@ -97,20 +106,20 @@ hr {
 }
 .hr-2 {
   position: relative;
-  bottom: 60px;
+  bottom: 100px;
   width: 80%;
   margin: 0 auto;
 }
 
 .pressure-row {
+  font-family: "Rubik", sans-serif;
   margin-left: 20px;
   margin-right: 20px;
   position: relative;
-  bottom: 80px;
+  bottom: 120px;
   margin-bottom: 0;
 }
 .pressure {
-  font-family: "Rubik", sans-serif;
   text-align: left;
   font-size: 15px;
   margin-bottom: 0px;
@@ -120,16 +129,17 @@ hr {
 }
 .hr-3 {
   position: relative;
-  bottom: 100px;
+  bottom: 140px;
   width: 80%;
   margin: 0 auto;
 }
 
 .feels-like-row {
+  font-family: "Rubik", sans-serif;
   margin-left: 20px;
   margin-right: 20px;
   position: relative;
-  bottom: 120px;
+  bottom: 160px;
   margin-bottom: 0;
 }
 
@@ -180,6 +190,10 @@ hr {
 }
 
 .search-button {
+  border: none;
+  font-size: 16px;
+
+  height: 37px;
   margin-top: 20px;
   padding-left: 3.15rem;
   padding-right: 3.15rem;
@@ -188,11 +202,14 @@ hr {
 }
 
 .location-button {
+  border: none;
+  font-size: 16px;
+  height: 37px;
   position: relative;
   right: 15px;
   margin-top: 20px;
-  padding-left: 0.65rem;
-  padding-right: 0.65rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
   margin-left: 40px;
   margin-right: 40px;
 }
@@ -294,9 +311,14 @@ img {
 }
 
 p {
+  color: rgb(51, 139, 147);
   font-size: small;
   margin-top: 5px;
   float: left;
   margin-left: 195px;
   margin-right: 2px;
+}
+
+p a {
+  color: rgb(51, 139, 147);
 }
